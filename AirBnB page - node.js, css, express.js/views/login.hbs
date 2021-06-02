@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB322 Assignment3-5</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="shortcut icon" href="css/style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    {{> header}}
+    
+      <div class="main-contents-login">
+        {{> nav user}}
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+           <!-- <span class="close">&times;</span>-->
+            <div class="login">
+              <p>Log In</p>
+              <hr>
+              {{#if errorMsg}}
+                  <h5>{{errorMsg}}</h5>
+              {{/if}}
+              {{#if user}}
+                  <h2> you are already logged in</h2>
+              {{else}}
+                <form action="/login" method="POST" novalidate>
+                <div>
+                <label for="email">Email address:</label>
+                <input type="email" name="useremail" id="useremail" autofocus autocomplete="email" pattern=".+@.+..+" placeholder="Enter email address..." required aria-describedby="email-error">
+                <p class="error-message-nav" id="email-error-login">
+                  &#9888;<span class="icon-label"> Email should include '@' with proper form, ex) abc@gmail.com</span>
+                </p>
+                <label for="password">Password:</label>
+                <input type="password" name="userpassword" id="userpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="8 Characters with 1 lowercase and uppercase, 1 number" required aria-describedby="password-error">
+                <p class="error-message-nav" id="password-error-login">
+                 &#9888;<span class="icon-label"> Password should be at least 8 characters including one charater of Upper and Lowercase and a number</span>
+                </p>
+              </div>
+              <button type="submit" class="btn btn-submit">Log In</button>
+              </form>
+
+              <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
+          {{/if}}
+            <p class="or">or</p>
+            <hr class="orhr">
+            <button class="btn btn-google">
+              <span class="fab fa-google">
+                Login With Google
+            </span></button>
+            <button class="btn btn-facebook">
+              <span class="fab fa-facebook-f">
+                Login With Facebook
+            </span></button>
+            <div class="login-signup">
+              <p><a href="registration">Don't have an Account?</a></p>
+            </div>
+            
+        </div>
+      </div>
+      </div>
+    </div>
+
+      {{> footer}}
+    
+
+  </body>
+</html>

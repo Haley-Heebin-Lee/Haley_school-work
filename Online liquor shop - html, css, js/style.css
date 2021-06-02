@@ -1,0 +1,506 @@
+/* Add any CSS you need to this file. */
+/* import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital@1&display=swap');
+/* import fontawesome */
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* ============ for warning sticky message ================ */
+div.stick {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  color: #f1f1f1;
+  font-weight: bold;
+  height: 36px;
+  font-size: 0.9em;
+  background-color: rgb(130, 147, 165);
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0;
+  backface-visibility: hidden;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+p.strong {
+  display: inline-block;
+  color: rgb(150, 22, 22);
+}
+span.warning {
+  color: yellow;
+  font-weight: bold;
+}
+
+/*=============== page heading style ==================*/
+header.page-heading {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.884);
+  padding-bottom: 10px;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+/*=================== logo==================*/
+img.logo {
+  height: 23%;
+  width: 22%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+/*============ side bar style============= */
+nav a,
+nav div {
+  padding: 10px 20px;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+#cart {
+  font-size: 24px;
+  color: white;
+  margin-left: 2%;
+}
+.login {
+  margin-left: 40%;
+}
+/* ================ search bar =============== */
+input[type='text'] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  margin-left: 2%;
+}
+input[type='text']:focus {
+  width: 13%;
+}
+/*@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}*/
+
+/*============= make sub menu bar ============*/
+.submenu {
+  position: relative;
+  display: inline;
+}
+.submenu-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f167;
+  min-width: 400px;
+  z-index: 1;
+  font-size: 0.9em;
+} /* Dropdown Content (Hidden by Default) */
+.submenu-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block, inline;
+} /* Links inside the menu */
+.submenu-content a:hover {
+  background-color: #ddd;
+}
+.submenu:hover .submenu-content {
+  display: block;
+}
+.submenu:hover {
+  background-color: #5c4ba7;
+}
+/*============ log in styling ==================*/
+main div {
+  margin: 70px auto;
+  max-width: calc(70% - 150px);
+  text-align: center;
+}
+.form-wrapper {
+  color: #625c64f6;
+  display: flex;
+  /*border-radius: 0.25rem;*/
+}
+form {
+  flex: 0 0 50%;
+  text-align: center;
+  display: inline-block;
+  padding: 3rem 15rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex: 0 0 100%;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+input[type='email'],
+input[type='password'] {
+  flex: 0 1 100%;
+  font-size: 0.9rem;
+  border: 1px solid #d5d6da;
+  padding: 1.5rem 1rem;
+  height: 2px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6e707e;
+}
+
+input:focus {
+  outline-color: #909092;
+}
+input[type='file'] {
+  border: none;
+  padding-left: 0;
+  padding-top: 5px;
+}
+fieldset {
+  margin-top: 15px;
+  flex: 0 0 100%;
+  display: flex;
+  border: none;
+  padding: 0;
+}
+
+fieldset input {
+  width: 100%;
+}
+
+fieldset legend {
+  padding-left: 0;
+}
+
+.btn {
+  width: 100%;
+  margin: 30px auto 10px auto;
+  padding: 0.9rem 0.75rem;
+  border: none;
+  background-color: #bf71ec;
+  color: white;
+  border-radius: 10rem;
+  font-size: 0.8em;
+}
+
+.btn:hover {
+  background-color: #ab59db;
+  cursor: pointer;
+}
+
+form h1 {
+  color: #858796;
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px auto 30px auto;
+}
+
+.btn-google {
+  background-color: #ea4335;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.btn-google:hover {
+  background-color: #c92314;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-facebook:hover {
+  background-color: #304a83;
+}
+
+hr {
+  margin: 5px 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ext-url {
+  width: 100%;
+  margin-top: 0;
+}
+
+.ext-url p {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.ext-url a {
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #007bff;
+}
+
+@media (min-width: 576px) {
+  main {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    max-width: 990px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  form {
+    width: 100%;
+    flex: 0 1 100%;
+    padding: 3rem 2rem;
+  }
+}
+/*==============Location==========================*/
+main {
+  max-width: 100%;
+}
+iframe {
+  padding: 10px;
+  margin-top: 3%;
+  margin-right: 7%;
+  float: right;
+}
+div.location {
+  float: left;
+  margin-left: 100px;
+  margin-top: 60px;
+  width: 40vw;
+  height: 60vh;
+}
+main div h2 {
+  font-family: 'Playfair Display', serif;
+  color: rgb(230, 175, 227);
+  font-weight: bold;
+  font-size: 2em;
+  display: inline;
+  padding: 100px;
+  padding-left: 100px;
+  display: table-cell;
+}
+p.loc {
+  font-size: 1.1em;
+  margin-left: 250px;
+  margin-top: 0;
+  color: rgb(198, 138, 233);
+  font-family: 'Roboto', sans-serif;
+}
+p.phoneNo {
+  font-size: 1.1em;
+  margin-left: 250px;
+  margin-top: 0;
+  color: rgb(160, 139, 218);
+}
+/*==============table setting ==================*/
+.main-sale {
+  text-align: center;
+  font-family: 'Rowdies', cursive;
+  margin-top: 37px;
+  font-size: 2.3em;
+  font-weight: bold;
+  color: rgb(57, 27, 82);
+}
+.whatonsale {
+  font-size: 1.5em;
+  font-family: 'Inconsolata', monospace;
+  margin-top: 50px;
+  margin-left: 100px;
+  border-radius: 37px;
+  color: rgb(126, 43, 112);
+  width: 90%;
+}
+table {
+  margin-left: 6%;
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  width: 90%;
+}
+table td {
+  padding: 5px;
+  background-color: rgba(211, 211, 211, 0.562);
+  max-width: 250px;
+}
+table tr {
+  display: inline;
+  /* max-height: 100px;*/
+}
+.Desc {
+  max-width: 189px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: rgb(71, 67, 80);
+  text-align: justify;
+}
+.Name {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: rgb(165, 83, 128);
+}
+.Price-sale {
+  margin-top: 0px;
+  padding: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.315);
+  font-size: 1.1em;
+  border-radius: 45%;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  color: rgb(92, 3, 85);
+  float: left;
+}
+.Alchohol {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9em;
+}
+p.NotAvailable {
+  color: red;
+}
+.Price {
+  color: rgb(59, 9, 59);
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+.capacity {
+  max-width: 90%;
+  margin-top: 30px;
+  margin-left: 90px;
+  text-align: right;
+  color: rgb(151, 28, 135);
+}
+.header {
+  font-size: 1.6em;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Baloo Tamma 2', cursive;
+  background-color: rgb(41, 38, 49);
+  max-width: 90%;
+  margin-left: 6%;
+  padding: 5px;
+  color: white;
+}
+/*===========About================*/
+.about_header {
+  font-size: 40px;
+  font-family: 'Vidaloka', serif;
+  line-height: 42px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-left: 8%;
+  max-width: 80%;
+}
+div.about_contents {
+  margin-left: 8%;
+  max-width: 80%;
+  font-size: 1.1em;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 22px;
+  text-align: left;
+  margin-top: 20px;
+  padding: 2px;
+}
+
+/*===============footer==============*/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 50vh;
+}
+.footer-warning {
+  color: white;
+  clear: both;
+}
+.footer-display div {
+  border-top: 1px solid white;
+  padding-top: 2px;
+  float: left;
+}
+ul {
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: right;
+}
+ul a:visited {
+  color: white;
+}
+ul a {
+  text-decoration: none;
+}
+footer img {
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 2px;
+  float: right;
+}
+section {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 90px;
+}
+section h4 {
+  color: pink;
+}
+.fa-facebook,
+.fa-instagram {
+  font-size: 25px;
+  margin-left: 20px;
+}
+footer div p {
+  margin-bottom: 0;
+  margin-left: 50px;
+  margin-right: auto;
+  color: lightgray;
+}

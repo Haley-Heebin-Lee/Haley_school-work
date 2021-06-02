@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB322 Assignment3-5</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="shortcut icon" href="css/style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    {{> header}}
+    
+      <div class="main-contents">
+        {{> nav user}}
+        <div class="form-wrapper-reg">
+          
+            <form name="registration" action="/registration" method="POST" novalidate>
+              <h1>Welcome !</h1>
+              <p></p>
+              <h5>{{Msg}}</h5>
+              <label for="email">Email address:</label>
+              <input type="email" name="email" id="re-email" autofocus autocomplete="email" pattern=".+@.+..+" placeholder="Enter email address..." required aria-describedby="email-error">
+              <p class="error-message" id="email-error">
+                &#9888;<span class="icon-label"> Email should include '@' with proper form, ex) abc@gmail.com</span>
+              </p>
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="re-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter at least 8 Characters of A lowercase and uppercase, A number" required aria-describedby="password-error">
+              <p class="error-message" id="password-error">
+                &#9888;<span class="icon-label"> Password should be at least 8 characters including one charater of Upper and Lowercase and a number</span>
+              </p>
+              <label for="fname">First Name:</label>
+              <input type="text" name="fname" id="fname" autocomplete="fname" placeholder="Your first name..." required aria-describedby="fname-error">
+              <p class="error-message" id="fname-error">
+                &#9888;<span class="icon-label"> Required to fill this form</span>
+              </p>
+              <label for="lname">Last Name:</label>
+              <input type="text" name="lname" id="lname" autocomplete="lname" placeholder="Your last name..." required aria-describedby="lname-error">
+              <p class="error-message" id="lname-error">
+                &#9888;<span class="icon-label"> Required to fill this form</span>
+              </p>
+              <label for="tel-mobile">Mobile Phone:</label>
+              <input type="tel" name="phone" id="phone" pattern="[0-9]{10,}" autocomplete="tel tel-local mobile"
+                placeholder="ex) 6471110000" required aria-describedby="phone-error">
+              <p class="error-message" id="phone-error">
+                &#9888;<span class="icon-label"> Phone number should be 10 digit of numbers without '-'</span>
+              </p>
+              <label for="bday">Your Birth Date:</label>
+              <input type="date" name="bday" id="bday" autocomplete="bday" required aria-describedby="bday-error">
+             <p class="error-message" id="bday-error">
+                &#9888;<span class="icon-label"> Required to choose your birth day</span>
+              </p>
+              <hr>
+
+              <input type="submit" class="btn btn-submit">
+              <hr>
+              <div class="ext-url">
+                <p><a href = "login">Already have an Account?</a></p>
+              </div>
+            </form>
+            <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
+      
+      
+          </div>
+      </div>
+
+
+
+     {{> footer}}
+    
+
+  </body>
+</html>

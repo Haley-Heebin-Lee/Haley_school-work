@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB322 Assignment3-5</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="shortcut icon" href="css/style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    {{> header}}
+    
+      <div class="main-contents">
+       {{> nav user}}
+       <div class="table-wrapper">
+           <!-- old room listing form
+        <div class="room1">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/85/ae/1d/starlight-luxury-rooms.jpg" alt="room1">
+            <p class="room-title">starlight luxury rooms</p>
+            <p class="room-price">$ 105 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="rating">(92)</span>
+        </div>
+        <div class="room2">
+            <img src="https://i.pinimg.com/originals/fe/19/aa/fe19aa5489cfb0a8ce4d5c6d2666c946.jpg" alt="room2">
+            <p class="room-title">Private Room with Patio!</p>
+            <p class="room-price">$ 115 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="rating">(215)</span>
+        </div>
+        <div class="room3">
+            <img src="https://pix10.agoda.net/hotelImages/625/6257553/6257553_18120716310070154573.jpg" alt="room3">
+            <p class="room-title">Sky View - Free WIFI</p>
+            <p class="room-price">$ 80 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="rating">(302)</span>
+        </div>
+        <div class="room4">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/45/16/dd/the-mood-luxury-rooms.jpg" alt="room4">
+            <p class="room-title"> Quiet Modern design Room</p>
+            <p class="room-price">$ 65 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="rating">(104)</span>
+        </div>
+        <div class="room5">
+            <img src="https://www.bravotv.com/sites/bravo/files/2019-05/best-room-wins-before-and-after-episode-105-weisen-10.jpg" alt="room5">
+            <p class="room-title">Amazing Duplex with Terrace!</p>
+            <p class="room-price">$ 78 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="rating">(245)</span>
+        </div>
+        <div class="room6">
+            <img src="https://cf.bstatic.com/images/hotel/max1024x768/208/208086215.jpg" alt="room6">
+            <p class="room-title">Luxury Entire Guest Suite</p>
+            <p class="room-price">$ 120 CAD/night</p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="rating">(89)</span>
+        </div>
+-->
+
+    {{#if hasRooms}}
+    {{#if user.isAdmin}}
+        {{#each room}}
+        <div class="room{{_id}}">
+            
+            <a href="/room/book/{{_id}}"><img src="{{roomImg}}" alt="room{{_id}}"></a>
+            <p class="room-title">{{title}} - {{desc}}</p>
+            <p class="room-price">$ {{price}} CAD/night - {{location}}</p>
+            {{#each rate}}
+                <span class="fa fa-star checked"></span>
+            {{/each}}
+            <span class="rating">({{review}})</span>
+            <p>
+            <a class="roomEdit" href="/room/edit/{{_id}}">Edit</a>
+             |
+            <a class="roomEdit" href="/room/delete/{{_id}}">Delete</a>
+        </p>
+        </div>
+        {{else}}
+        <h1>No data found</h1>
+        {{/each}}
+    {{else}}
+        {{#each room}}
+        <div class="room{{_id}}">
+            <a href="/room/book/{{_id}}"><img src="{{roomImg}}" alt="room{{_id}}"></a>
+            <p class="room-title">{{title}} - {{desc}}</p>
+            <p class="room-price">$ {{price}} CAD/night</p>
+            {{#each rate}}
+                <span class="fa fa-star checked"></span>
+            {{/each}}
+            <span class="rating">({{review}})</span>
+        </div>
+        {{else}}
+        <h1>No data found</h1>
+    {{/each}}
+    {{/if}}
+    {{else}}
+    <h3>No rooms available</h3>
+    {{/if}}
+
+    {{#if user.isAdmin}}
+        <a class="roomAdd" href="/room/edit">Click to Add New Room</a>
+
+    {{/if}}
+<script>
+    function interation(size){
+        for(var i=0; i<size; i++)
+                
+    }
+    
+</script>
+
+       </div>
+      </div>
+    <div class="search-bar">
+            <form action="/roomSearch" method="post">
+                <div class="search-em">
+                    <label class="search-la">Location</label>
+                    <input list="cities" name="locationSearch" id="location" placeholder="Where are you going?" required>
+                    <datalist id="cities">
+                        <option value="Toronto">
+                        <option value="Vancouver">
+                        <option value="Victoria">  
+                        <option value="Montreal">
+                        <option value="Otawa">
+                        <option value="Quebec">
+                    </datalist>
+                </div>
+                <button type="submit" class="search-submit">Search</button>
+            </form>
+        </div>
+
+
+      {{> footer}}
+    
+
+  </body>
+</html>
