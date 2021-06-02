@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB322 Assignment3-5</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link type="text/css" rel="shortcut icon" href="/css/style.css" />
+    <script src="/script.js"></script>
+  </head>
+
+  <body>
+    {{> header room}}
+
+      <div class="main-contents">
+          
+
+
+        {{> nav user}}
+        
+        <div class="roomDesc">
+            <div class="roomDesc1">
+                <h2>{{room.title}}</h2>
+                <img src="{{room.roomImg}}" alt="room{{room._id}}" width=550, height=350>
+            </div>
+            <div class="roomDesc2">
+                {{#if bookingMsg}}
+                <p class="bookingMsg">{{bookingMsg}}</p>
+                {{/if}}
+                <p class="arrow">&#8593;&#8593; use booking bar above ! the location is already set &#8593;&#8593;</p>
+                <p class="room-title">Room Description: {{room.desc}}</p>
+                <p class="room-title">Price per Night: $ {{room.price}} CAD</p>
+                Rate&amp;Reviews: 
+                {{#each room.rate}}
+                <span class="fa fa-star checked"></span>
+                {{/each}}
+                <span class="rating">({{room.review}})</span>
+            </div>
+        </div>
+      </div>
+     {{> footer}}
+    
+
+  </body>
+</html>

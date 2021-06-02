@@ -1,0 +1,38 @@
+<header class="page-heading">
+      <div id="stickybar" class="stick">
+        <a href="/"><img class="logo" src="/logo.PNG" alt="fail"/> </a>
+        <div class="search-bar">
+            <form name="searchbar" action="/room/book" method="post">
+                <div class="search-em">
+                    <label class="search-la">Location</label>
+                    <input list="cities" name="location" id="location" placeholder="Where are you going?" value="{{location}}" required>
+                    <datalist id="cities">
+                        <option value="Toronto">
+                        <option value="Vancouver">
+                        <option value="Victoria">  
+                        <option value="Montreal">
+                        <option value="Otawa">
+                        <option value="Quebec">
+                    </datalist>
+                </div>
+                <div class="search-em">
+                    <label class="search-la" for="datemin">Check In</label>
+                    <input type="date" name="checkin" id="checkin" placeholder="Select date" min="2020-12-11" required>
+                </div>
+                <div class="search-em">
+                    <label class="search-la" for="datemax">Check Out</label>
+                    <input type="date" name="checkout" id="checkout" placeholder="Select date" min="2020-12-11" max="2021-10-09" required>
+               </div>
+               <div class="search-em">
+                    <label class="search-la" for="quantity">Guests</label>
+                    <input type="number" name="guests" id="guests" min="1" max="6" required>
+               </div>
+                {{#if _id}}
+                <input type="hidden" name="idNum" value="{{_id}}">
+                {{/if}}
+               <button type="submit" class="search-submit">Book</button>
+            </form>
+        </div>
+      <div>
+        
+    </header>

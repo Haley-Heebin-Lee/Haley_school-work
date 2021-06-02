@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB322 Assignment3-5</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="shortcut icon" href="css/style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    {{> header}}
+    
+      <div class="main-contents">
+        {{> nav user}}
+        <div class="dash">
+          <p class="dash-welcome">Hello {{user.fname}},</p>
+          <p class="dash-welcome">You are sucessfully logged in to our AirBnB service!</p>
+          <p class="dash-sub">email: {{user.email}}</p>
+          {{#if user.isAdmin}}
+            <h5>you are now Administor mode <a class="roomAdd" href="/room/edit">Click to Add New Room</a></h5>
+          {{/if}}
+        </div>
+      </div>
+
+
+
+      {{> footer}}
+    
+
+  </body>
+</html>
