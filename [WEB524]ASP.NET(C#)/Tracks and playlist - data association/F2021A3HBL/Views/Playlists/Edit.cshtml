@@ -1,0 +1,55 @@
+﻿@model F2021A3HBL.Models.PlaylistEditTracksFormViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit playlist <span class="p-3 mb-2 bg-info text-dark">@Model.Name</span></h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Select tracks, and click "Save changes" button</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PlaylistId)
+        <div class="btn-group">
+            <input type="submit" value="Save" class="btn btn-default" />&nbsp;&nbsp;
+            @Html.ActionLink("Back to Details", "Details", new { id = Model.PlaylistId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <h4>All Tracks</h4>
+                <br />
+                @foreach (var track in Model.TrackList)
+                {
+                    <input type="checkbox" name="TrackId" value="@track.Value" checked="@track.Selected" />
+                    @track.Text
+                    <br />
+                }
+            </div>
+            <div class="col-md-6 bg-primary">
+
+                <h4>
+                    Now on Playlist<span class="badge">@Model.TracksCount</span>
+                </h4>
+                @foreach (var track in Model.TracksOnPlaylist)
+                {
+                    @track.NameShort;
+                    <br />
+                }
+
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

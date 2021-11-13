@@ -1,0 +1,44 @@
+﻿@model F2021A3HBL.Models.PlaylistWithDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Playlist details <span class="p-3 mb-2 bg-info text-dark">@Html.DisplayFor(model=>model.Name)</span></h2>
+
+<div>
+    <h4>Choose edit or back to list</h4>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model=>model.Name)
+        </dd>
+        <dt><br /></dt>
+        <dd><br /></dd>
+
+        <dt>
+            @Html.Raw("Tracks now on the playlist ")
+            <span class="badge">@Model.TracksCount</span>
+        </dt>
+        <dd>
+            @foreach (var track in Model.Tracks)
+            {
+                <span>@track.Name</span><br />
+            }
+        </dd>
+
+    </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+

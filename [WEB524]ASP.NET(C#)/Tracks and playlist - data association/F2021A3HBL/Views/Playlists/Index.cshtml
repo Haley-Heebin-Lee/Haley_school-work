@@ -1,0 +1,37 @@
+﻿@model IEnumerable<F2021A3HBL.Models.PlaylistBaseViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Playlists</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            Number of tracks on this playlist
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        <span class="badge">
+            @Html.DisplayFor(modelItem => item.TracksCount)
+        </span>
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PlaylistId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PlaylistId })
+    </td>
+</tr>
+}
+
+</table>
