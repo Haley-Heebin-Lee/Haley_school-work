@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout-land/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout-land/layout_land.xml" value="0.23693693693693693" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/activity_recycler_product_list.xml" value="0.2390625" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/activity_second.xml" value="0.2390625" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/history_details.xml" value="0.176" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/history_list.xml" value="0.2390625" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/history_list_row_item.xml" value="0.2390625" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/list_row_item.xml" value="0.176" />
+        <entry key="..\:/Users/gmlql/OneDrive/MAP524_android/Assignment/Assignment2/app/src/main/res/layout/recycler_view_list_row.xml" value="0.2390625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

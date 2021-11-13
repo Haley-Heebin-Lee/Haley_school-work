@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">[MAP524]Assignment2_HeebinLee</string>
+    <string name="productType">Product Type</string>
+    <string name="total">Total</string>
+    <string name="quantity">Quantity</string>
+    <string name="buy">Buy</string>
+    <string name="button0">0</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="reset">C</string>
+    <string name="manager">MANAGER</string>
+    <string name="history">History</string>
+</resources>
