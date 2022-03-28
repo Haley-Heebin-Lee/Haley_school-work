@@ -1,0 +1,72 @@
+﻿@model F2021A5HBL.Models.TrackWithDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+    var numOfAlbums = Model.Albums.Count();
+}
+
+<h2>Details for track @Model.Name</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Composers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Composers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clerk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clerk)
+        </dd>
+
+        <dt>
+            Numbder of albums with this track
+        </dt>
+
+        <dd>
+            @numOfAlbums
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumNames)
+        </dt>
+
+        <dd>
+            @foreach(var album in Model.AlbumNames)
+            {
+                <dd>
+                    @album
+                </dd>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+   @Html.ActionLink("Back to List", "Index")
+</p>

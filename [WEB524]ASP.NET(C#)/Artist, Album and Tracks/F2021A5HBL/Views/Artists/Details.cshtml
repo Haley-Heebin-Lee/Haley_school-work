@@ -1,0 +1,71 @@
+﻿@model F2021A5HBL.Models.ArtistWithDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+    var numOfAlbums = Model.Albums.Count();
+}
+
+<h2>Details - @Model.Name</h2>
+
+<div>
+    <h4>Artist details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthOrStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthOrStartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlArtist)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model=>model.UrlArtist)" alt="@Html.DisplayFor(model=>model.Name)" with="200" height="200" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Executive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Executive)
+        </dd>
+
+        <dt>
+            Number of Albums
+        </dt>
+
+        <dd>
+            @numOfAlbums
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index") | @Html.ActionLink("Add Album for this artist", "AddAlbum", new { id = Model.Id })
+</p>
