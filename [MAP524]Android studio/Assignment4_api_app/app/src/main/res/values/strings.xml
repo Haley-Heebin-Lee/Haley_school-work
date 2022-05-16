@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment4</string>
+    <string name="newsHistory">History</string>
+    <string name="exit">Exit</string>
+    <string name="search">Search for news</string>
+
+</resources>

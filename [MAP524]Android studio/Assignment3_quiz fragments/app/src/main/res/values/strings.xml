@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Assignment3</string>
+    <string name="btnTrue">True</string>
+    <string name="btnFalse">False</string>
+    <string name="Q1">Toronto is the capital city of Canada</string>
+    <string name="Q2">Mexico city is the capital city of Mexico</string>
+    <string name="Q3">Seoul is the capital city of Korea</string>
+    <string name="Q4">Ottawa is the capital city of Canada</string>
+    <string name="getAvg">Get the Average</string>
+    <string name="resetResult">Reset the saved Result</string>
+</resources>

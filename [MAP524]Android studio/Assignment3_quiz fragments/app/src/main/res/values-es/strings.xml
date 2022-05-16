@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarea3</string>
+    <string name="btnTrue">Cierto</string>
+    <string name="btnFalse">Falsa</string>
+    <string name="Q1">Toronto es la ciudad capital de Canadá</string>
+    <string name="Q2">Ciudad de México es la ciudad capital de México</string>
+    <string name="Q3">Seúl es la capital de Corea</string>
+    <string name="Q4">Ottawa es la ciudad capital de Canadá</string>
+    <string name="getAvg">Obtener el promedio</string>
+    <string name="resetResult">Restablecer el resultado guardado</string>
+</resources>
